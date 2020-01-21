@@ -147,11 +147,11 @@ bindsym $mod+r mode "resize"
 ##i3 bar 
 bar{
    colors {
-	background #83adb5
+	background #b8fec1	
 	statusline #5e3c58 
 
    }
-	status_command i3status
+	status_command i3blocks
 	separator_symbol "|"
 	position top
 		
@@ -178,7 +178,7 @@ focus_follows_mouse no
 
 # Set inner/outer gaps
 #for_window [class="^.*"] border pixel 0
-gaps inner 5
+gaps inner 8
 gaps outer 1
 
 #Unclutter on startup
