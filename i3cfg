@@ -4,7 +4,6 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Monospace 8
@@ -116,7 +115,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You sure you want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -151,20 +150,19 @@ bar{
 	statusline #5e3c58 
 
    }
-	status_command i3blocks
+	status_command i3blocks 
 	separator_symbol "|"
 	position top
 		
 }
 
 
-##Window color schemes
-client.focused		        #2C313D        #2e3440        $background  $background
-client.focused_inactive	    #2C313D        #303743        $background  $background
-client.unfocused	        #2C313D        #303743        $background  $background
-client.urgent		        $background    #282d37    $background  $background
-client.placeholder	        $background    #282D37    $background  $background
+#Border colors (outline, fill color, ???, ???)
+client.unfocused #333333 #acc1ba #ffffff #2e9ef4
+client.focused #333333 #ee876d #ffffff #484e50
 
+#Set border thickness
+for_window [class="^.*"] border pixel 3
 
 hide_edge_borders both
 
@@ -177,7 +175,6 @@ focus_follows_mouse no
 #############################
 
 # Set inner/outer gaps
-#for_window [class="^.*"] border pixel 0
 gaps inner 8
 gaps outer 1
 
