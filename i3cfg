@@ -147,8 +147,12 @@ bindsym $mod+r mode "resize"
 bar{
    colors {
 	background #b8fec1	
-	statusline #5e3c58 
+	statusline #5e3c58
 
+	#Workspace indicator colors (fill color, fill color, num color)
+	focused_workspace #ee876d #ee876d #000000
+	active_workspace #0f5e48 #0f5e48 #f1f1f1
+	inactive_workspace #0f5e48 #0f5e48 #7391ba
    }
 	status_command i3blocks 
 	separator_symbol "|"
@@ -158,8 +162,10 @@ bar{
 
 
 #Border colors (outline, fill color, ???, ???)
-client.unfocused #333333 #acc1ba #ffffff #2e9ef4
-client.focused #333333 #ee876d #ffffff #484e50
+client.unfocused #333333 #acc1ba #ffffff #acc1ba
+client.focused #333333 #ee876d #ffffff #ee876d
+client.focused_inactive #333333 #acc1ba #ffffff #acc1ba
+
 
 #Set border thickness
 for_window [class="^.*"] border pixel 3
